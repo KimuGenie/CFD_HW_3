@@ -1,7 +1,9 @@
-function uex = exact(alpha, A, dx, dt, tend)
+function uex = exact(alpha, A, dx, dt, imax, nmax)
 
-for n=1:tend/dt+1
-    for i=1:pi/dx+1
+uex = zeros(imax, nmax);
+
+for n=1:nmax
+    for i=1:imax
         uex(i, n) = A*exp(-alpha*dt*(n-1))*sin(dx*(i-1));
     end
 end

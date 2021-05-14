@@ -1,8 +1,11 @@
-function u = initialization(A, dx, dt, tend)
+function [u, imax, nmax] = initialization(A, dx, dt, tend)
 
-u = zeros(pi/dx+1, int32(tend/dt+1));
+imax = round(pi/dx)+1;
+nmax = ceil(tend/dt+1);
 
-for i=1:pi/dx+1
+u = zeros(imax, nmax);
+
+for i=1:imax
     x = (i-1)*dx;
     u(i, 1) = A*sin(x);
 end
