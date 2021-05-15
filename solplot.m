@@ -1,4 +1,4 @@
-function t=solplot(alpha, A, u, uex, dx, dt, tend, timestep, method, exactsolution, beta)
+function [t, n]=solplot(alpha, A, u, uex, dx, dt, tend, timestep, method, exactsolution, beta)
 
 methods = {'FTCS', 'Richardson', 'DuFort-Frankel', 'Laasonen', 'Crank-Nicolson', strcat('β=', num2str(beta))};
 lin = {'-^', '-p', '-d', '-s', '-*', '-+'};
